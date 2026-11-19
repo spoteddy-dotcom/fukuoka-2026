@@ -91,12 +91,6 @@ h2{font-size:26px;margin:0 0 14px}
 .wxrow{display:flex;align-items:center;justify-content:space-between;gap:8px;border:2px solid var(--ink);border-radius:14px;padding:6px 10px;background:var(--paper)}
 .wxrow b{font-variant-numeric:tabular-nums}
 footer{text-align:center;padding:40px 14px calc(96px + var(--sb));font-size:13px}
-#ytWrap{position:fixed;right:0;bottom:0;width:200px;height:113px;opacity:0;pointer-events:none;z-index:-1}
-#musicBtn{position:fixed;right:var(--sr);bottom:calc(14px + var(--sb));z-index:30;width:54px;height:54px;border-radius:50%;border:3px solid var(--ink);background:var(--coral);font-size:24px;line-height:1;box-shadow:3px 3px 0 var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-appearance:none;appearance:none;padding:0}
-#musicBtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
-#musicNote{position:fixed;right:var(--sr);bottom:calc(76px + var(--sb));z-index:30;max-width:min(260px,calc(100% - 28px));background:#fff;border:3px solid var(--ink);border-radius:16px;padding:8px 12px;font-size:13px;box-shadow:3px 3px 0 var(--ink);opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s;pointer-events:none}
-#musicNote.show{opacity:1;transform:none;pointer-events:auto}
-#musicNote a{color:var(--ink);font-weight:800}
 @media(min-width:720px){.heroGrid{grid-template-columns:1.05fr .95fr;align-items:center}.flightGrid,.stayGrid{grid-template-columns:repeat(2,1fr)}.navin{height:68px}.links a{font-size:14px;padding:6px 14px}.num{font-size:14px}}
 @media(max-width:420px){:root{--sh:4px;--r:20px}.brand{display:none}.links{flex:1;justify-content:space-between;gap:4px}.links a{padding:7px 9px;font-size:12px}.card{padding:16px}.airport b{font-size:27px}.num b{font-size:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
@@ -109,10 +103,10 @@ footer{text-align:center;padding:40px 14px calc(96px + var(--sb));font-size:13px
 <section id="flight"><div class="wrap"><h2>✈ 航班</h2><div class="flightGrid"><article class="card"><div class="muted">11/28 去程</div><div class="airline">亞洲航空 AirAsia <span class="fno">AK1510</span></div><div class="route"><div class="airport"><b>11:55</b><br>桃園</div><div class="plane">✈</div><div class="airport" style="text-align:right"><b>15:20</b><br>福岡</div></div><div class="fl"><a class="map" href="https://www.google.com/search?q=AK1510+flight+status" target="_blank" rel="noopener">✈ 查航班動態</a></div></article><article class="card"><div class="muted">11/30 回程</div><div class="airline">台灣虎航 Tigerair Taiwan <span class="fno">IT241</span></div><div class="route"><div class="airport"><b>10:55</b><br>福岡</div><div class="plane">✈</div><div class="airport" style="text-align:right"><b>12:40</b><br>桃園</div></div><div class="muted">08:00 出發前往機場，預留購物時間</div><div class="fl"><a class="map" href="https://www.google.com/search?q=IT241+flight+status" target="_blank" rel="noopener">✈ 查航班動態</a></div></article></div></div></section>
 <section id="concert"><div class="wrap"><h2>🎤 YOASOBI 演唱會</h2><article class="card concert"><h3>11/28（六）18:00 開演</h3><div class="muted" style="color:#fff">日本時間（台灣時間 17:00）</div><div class="cdLabel" style="margin:10px 0 0">距離開演還有：</div><div class="cc" id="cc" role="timer">--</div><div>場館：MIZUHO PayPay Dome 福岡 <a class="map" data-q="MIZUHO PayPay Dome Fukuoka">📍地圖</a></div><ul><li>行程預計在「唐人町站」下車</li><li>開場與入場時間，請以主辦單位的票券資訊為準</li><li>記得帶：票券 / 入場 QR、護照、行動電源、保暖外套</li></ul></article></div></section>
 <section id="plan"><div class="wrap"><h2>☀ 每日行程</h2><div class="tabs" role="tablist"><button class="tab active" role="tab" aria-selected="true" data-day="d1">11/28 六</button><button class="tab" role="tab" aria-selected="false" data-day="d2">11/29 日</button><button class="tab" role="tab" aria-selected="false" data-day="d3">11/30 一</button></div>
-<div id="d1" class="daypanel active"><div class="timeline"><div class="item"><div class="time">11:55 → 15:20</div>桃園第一航廈 → 福岡機場 <a class="map" data-q="福岡空港 国際線ターミナル">📍福岡機場</a> <span class="tag rail">飛機</span></div><div class="item"><div class="time">16:20</div>搭計程車到飯店 Check in <a class="map" data-q="Smile Hotel Ekimae 福岡">📍Smile Hotel</a> <span class="tag rail">計程車</span></div><div class="item"><div class="time">17:00</div>搭機場線到唐人町站 <a class="map" data-q="唐人町駅">📍唐人町站</a> <span class="tag rail">地鐵</span></div><div class="item"><div class="time">晚餐</div>Shake Shack 漢堡 <a class="map" data-q="Shake Shack Fukuoka">📍Shake Shack</a> <span class="tag food">吃</span></div><div class="item"><div class="time">18:00</div>YOASOBI 演唱會 <a class="map" data-q="MIZUHO PayPay Dome Fukuoka">📍PayPay Dome</a> <span class="must">必去</span></div><div class="item">麵屋兼虎 天神本店，有力氣就逛唐吉訶德 <a class="map" data-q="麺屋兼虎 天神本店">📍兼虎</a> <a class="map" data-q="ドン・キホーテ 天神">📍唐吉訶德</a> <span class="tag walk">步行</span></div></div></div>
+<div id="d1" class="daypanel active"><div class="timeline"><div class="item"><div class="time">11:55 → 15:20</div>桃園第一航廈 → 福岡機場 <a class="map" data-q="福岡空港 国際線ターミナル">📍福岡機場</a> <span class="tag rail">飛機</span></div><div class="item"><div class="time">16:20</div>福岡機場直接搭排班計程車到飯店 Check in <a class="map" data-q="Smile Hotel Ekimae 福岡">📍Smile Hotel</a> <span class="tag rail">計程車</span></div><div class="item"><div class="time">17:00</div>搭機場線到唐人町站 <a class="map" data-q="唐人町駅">📍唐人町站</a> <span class="tag rail">地鐵</span></div><div class="item"><div class="time">晚餐</div>Shake Shack 漢堡 <a class="map" data-q="Shake Shack Fukuoka">📍Shake Shack</a> <span class="tag food">吃</span></div><div class="item"><div class="time">18:00</div>YOASOBI 演唱會 <a class="map" data-q="MIZUHO PayPay Dome Fukuoka">📍PayPay Dome</a> <span class="must">必去</span></div><div class="item">麵屋兼虎 天神本店，有力氣就逛唐吉訶德 <a class="map" data-q="麺屋兼虎 天神本店">📍兼虎</a> <a class="map" data-q="ドン・キホーテ 天神">📍唐吉訶德</a> <span class="tag walk">步行</span></div></div></div>
 <div id="d2" class="daypanel"><div class="timeline"><div class="item"><div class="time">早餐</div>FUK Coffee Parks 早餐（08:00～20:00，僅收無現金） <a class="map" data-q="FUK Coffee Parks 福岡">📍FUK Coffee Parks</a> <span class="tag food">吃</span></div><div class="item">大濠公園散步 <a class="map" data-q="大濠公園">📍大濠公園</a> <span class="tag walk">步行</span></div><div class="item">舞鶴公園、福岡城跡賞楓（預測銀杏 11/28 前後最盛、楓葉 12/7 前後，11/29 楓葉可能未到最盛） <a class="map" data-q="舞鶴公園">📍舞鶴公園</a> <a class="map" data-q="福岡城跡">📍福岡城跡</a> <span class="tag walk">步行</span></div><div class="item"><div class="time">12:00</div>初喜 くうてん博多店（壽喜燒，博多車站 AMU PLAZA 10 樓，午餐最後點餐 14:00；用餐約 1.5 小時，12:00～13:30） <a class="map" data-q="初喜 くうてん博多店">📍初喜</a> <span class="tag food">吃</span></div><div class="item">車站買治一郎布丁、博多運河城看香外套、櫛田神社參拜 <a class="map" data-q="治一郎 博多駅">📍治一郎</a> <a class="map" data-q="キャナルシティ博多">📍博多運河城</a> <a class="map" data-q="櫛田神社">📍櫛田神社</a> <span class="tag walk">步行</span></div><div class="item"><div class="time">15:30</div>FULL FULL 天神店 拿明太子麵包（已預訂）<br>地址：福岡市中央區天神 3-3-5 FULL FULL BLD 1 樓，天神站步行約 4 分鐘；營業 10:00～21:00，週二公休（11/29 是週日） <a class="map" data-q="FULL FULL 天神 福岡市中央区天神3-3-5">📍FULL FULL 天神店</a> <span class="tag food">取貨</span></div><div class="item"><div class="time">18:30</div>鰻のエイト 博多総本店 <a class="map" data-q="鰻のエイト 博多総本店">📍鰻のエイト</a> <span class="tag food">吃</span></div><div class="item">天神逛街（Mina / Parco）、<b>Hare</b>、<b>montbell</b>、藥妝、超市購物 <span class="must">必逛 Hare・montbell</span> <a class="map" data-q="HARE 福岡 天神">📍Hare</a> <a class="map" data-q="montbell 福岡 天神">📍montbell</a> <a class="map" data-q="福岡パルコ">📍Parco</a> <a class="map" data-q="Mina天神">📍Mina</a> <span class="tag walk">逛街</span></div><div class="item"><div class="time">晚上</div>買藥妝：SUGI藥局 天神1丁目店（福岡市中央區天神1-13-6） <a class="map" data-q="スギ薬局 天神1丁目店 福岡市中央区天神1-13-6">📍SUGI藥局</a> <span class="tag walk">逛街</span></div></div></div>
 <div id="d3" class="daypanel"><div class="timeline"><div class="item"><div class="time">08:00</div>出發到機場、機場買買買 <span class="tag rail">前往機場</span></div><div class="item"><div class="time">10:55 → 12:40</div>福岡機場 → 桃園機場 <span class="tag rail">飛機</span></div></div></div></div></section>
-<section id="todo"><div class="wrap"><h2>✓ 待辦清單</h2><div class="card todo"><label class="check"><input type="checkbox"><span>FULL FULL 明太子麵包先預訂</span></label><label class="check"><input type="checkbox"><span>確認 YOASOBI 演唱會票券與入場資訊</span></label><label class="check"><input type="checkbox"><span>準備護照、網路、交通 IC 卡</span></label><label class="check"><input type="checkbox"><span>確認福岡機場往返飯店交通</span></label><label class="check"><input type="checkbox"><span>整理藥妝與超市購物清單</span></label></div></div></section>
+<section id="todo"><div class="wrap"><h2>✓ 待辦清單</h2><div class="card todo"><label class="check done"><input type="checkbox" checked><span>FULL FULL 明太子麵包先預訂</span></label><label class="check"><input type="checkbox"><span>確認 YOASOBI 演唱會票券與入場資訊</span></label><label class="check done"><input type="checkbox" checked><span>準備護照、網路、交通 IC 卡</span></label><label class="check done"><input type="checkbox" checked><span>確認福岡機場往返飯店交通</span></label><label class="check"><input type="checkbox"><span>整理藥妝與超市購物清單</span></label></div></div></section>
 <section id="shop"><div class="wrap"><h2>🛍 想買清單</h2><div id="shopList" class="glist"></div></div></section>
 <section id="snack"><div class="wrap"><h2>🍡 小點心專區</h2><div id="snackList" class="glist"></div></div></section>
 <section id="gift"><div class="wrap"><h2>🎁 機場伴手禮購物清單</h2><div class="muted" style="margin:-6px 0 12px">俞雁寶寶想的 ♡</div><div id="giftList" class="glist"></div></div></section>
@@ -120,9 +114,6 @@ footer{text-align:center;padding:40px 14px calc(96px + var(--sb));font-size:13px
 <section id="stay"><div class="wrap"><h2>⌂ 住宿</h2><div class="stayGrid"><div class="card"><b style="font-size:22px">Smile Hotel Ekimae</b><p>11/28 入住<br>11/29 續住</p></div><div class="card note"><b>旅程小提醒</b><p>11/30 08:00 出發前往福岡機場，回程班機 10:55 起飛。</p></div></div></div></section>
 <section id="info"><div class="wrap"><h2>ℹ 實用資訊</h2><div class="stayGrid"><article class="card"><b>🌤 福岡天氣</b><div id="wx" class="wx">載入中…</div></article><article class="card"><b>🚨 緊急與生活</b><ul class="info"><li>日本境內：警察 <a href="tel:110">110</a>、消防與救護 <a href="tel:119">119</a></li><li>電壓約 100V，插頭同為 A 型雙扁插頭（與台灣相同）</li><li>店家營業時間：點行程裡的 📍，Google 地圖頁面會顯示</li><li>航班動態：點航班卡片上的「查航班動態」</li><li><a class="map" data-q="台北駐福岡經濟文化辦事處">📍台北駐福岡經濟文化辦事處</a></li></ul></article></div></div></section></main>
 <footer>FUKUOKA 2026 · 旅のしおり</footer>
-<div id="ytWrap" aria-hidden="true"><div id="ytPlayer"></div></div>
-<div id="musicNote" role="status"></div>
-<button id="musicBtn" type="button" aria-label="播放音樂">🎵</button>
 <script>
 const $=id=>document.getElementById(id);
 
@@ -222,52 +213,4 @@ async function weather(){
   }catch(e){box.innerHTML='<div class="muted">天氣暫時無法載入（需要網路）。</div>'}
 }
 weather();
-
-/* YouTube：YOASOBI「アイドル」 */
-const VID='ZRtdQ81jPUQ',musicBtn=$('musicBtn'),musicNote=$('musicNote');
-let yt=null,ready=false,unlocked=false,failed=false,noteTimer=0;
-function note(html,ms){
-  clearTimeout(noteTimer);
-  if(!html){musicNote.classList.remove('show');return}
-  musicNote.innerHTML=html;musicNote.classList.add('show');
-  if(ms)noteTimer=setTimeout(()=>musicNote.classList.remove('show'),ms);
-}
-function setBtn(icon,label){musicBtn.textContent=icon;musicBtn.setAttribute('aria-label',label)}
-function unlock(){
-  if(unlocked||!ready)return;
-  unlocked=true;
-  try{yt.unMute();yt.setVolume(70);yt.playVideo()}catch(e){}
-  note('');
-}
-['pointerdown','touchend','keydown'].forEach(t=>addEventListener(t,e=>{
-  if(e.target.closest&&e.target.closest('#musicBtn,#musicNote'))return;
-  unlock();
-},{passive:true}));
-musicBtn.addEventListener('click',()=>{
-  if(failed){window.open('https://www.youtube.com/watch?v='+VID,'_blank','noopener');return}
-  if(!ready){note('音樂載入中…',2500);return}
-  if(!unlocked){unlock();return}
-  if(yt.getPlayerState()===1){yt.pauseVideo()}else{yt.unMute();yt.playVideo()}
-});
-function fail(){
-  failed=true;
-  setBtn('🎵','開啟 YouTube');
-  note('這個網頁環境無法內嵌播放，<a href="https://www.youtube.com/watch?v='+VID+'" target="_blank" rel="noopener">點這裡到 YouTube 聽</a>',9000);
-}
-window.onYouTubeIframeAPIReady=function(){
-  yt=new YT.Player('ytPlayer',{
-    width:'200',height:'113',videoId:VID,
-    playerVars:{autoplay:1,mute:1,playsinline:1,controls:0,loop:1,playlist:VID,rel:0,modestbranding:1,iv_load_policy:3,disablekb:1},
-    events:{
-      onReady:e=>{ready=true;e.target.mute();e.target.playVideo();setBtn('🔇','開啟聲音');note('🎵 YOASOBI「アイドル」靜音播放中，點一下畫面開啟聲音',7000)},
-      onStateChange:e=>{
-        if(e.data===1)setBtn(yt.isMuted()?'🔇':'🔊','暫停音樂');
-        else if(e.data===2)setBtn('▶️','播放音樂');
-        else if(e.data===0)yt.playVideo();
-      },
-      onError:fail
-    }
-  });
-};
-const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.onerror=fail;document.head.appendChild(s);
 </script></body></html>
